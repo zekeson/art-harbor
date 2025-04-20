@@ -1,2 +1,2 @@
 # art-harbor
-art harbor - first project for zeke
+art harbor - first project webdesign
