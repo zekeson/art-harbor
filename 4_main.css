@@ -131,19 +131,19 @@ input[type="radio"] {
 }
 
 .art-caption span.title {
-  font-size: 36px;
+  font-size: 38px;
   display: block;
   margin-bottom: 8px;
 }
 
 .art-caption span.artist {
-  font-size: 28px;
+  font-size: 30px;
   display: block;
   margin-bottom: 4px;
 }
 
 .art-caption span.category {
-  font-size: 24px;
+  font-size: 26px;
   display: block;
 }
 
@@ -248,4 +248,43 @@ input[type="radio"] {
 #uni9:checked ~ .college-container .map-icon.uni9,
 #uni10:checked ~ .college-container .map-icon.uni10 {
   background-color: #000;
+}
+
+.college-info {
+  margin-top: 60px;
+  padding: 40px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.uni-content {
+  display: none;
+}
+
+/* 선택된 대학만 표시 */
+#uni1:checked ~ .college-info .uni1,
+#uni2:checked ~ .college-info .uni2,
+#uni3:checked ~ .college-info .uni3,
+#uni4:checked ~ .college-info .uni4,
+#uni5:checked ~ .college-info .uni5,
+#uni6:checked ~ .college-info .uni6,
+#uni7:checked ~ .college-info .uni7,
+#uni8:checked ~ .college-info .uni8,
+#uni9:checked ~ .college-info .uni9,
+#uni10:checked ~ .college-info .uni10 {
+  display: block;
+}
+
+.univ-title {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.univ-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  height: auto;
 }
