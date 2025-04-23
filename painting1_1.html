@@ -1,9 +1,85 @@
-<html>
-    <head>
-        <title>painting1_1</title>
-    </head>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>무제 (Untitled) - 손유륜</title>
+  <link rel="stylesheet" href="4_main.css"> <!-- 기존 스타일 연결 -->
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 60px 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
 
-    <body>
-        <h2> painting1_1</h2>
-    </body>
+    .detail-container {
+      display: flex;
+      max-width: 1300px;
+      gap: 80px;
+      padding: 40px;
+    }
+
+    .art-image {
+      width: 490px;
+      height: 620px;
+      flex-shrink: 0;
+    }
+
+    .art-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      max-width: 500px;
+    }
+
+    .caption h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .caption p {
+      font-size: 20px;
+      margin: 8px 0;
+      font-weight: 400;
+    }
+
+    .description {
+      margin-top: 40px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="detail-container">
+    <div class="art-image">
+      <img src="painting1_1.jpg" alt="무제 (Untitled)">
+    </div>
+    <div class="caption">
+      <h1>무제 (Untitled)</h1>
+      <p>손유륜 (Son Yu Ryun)</p>
+      <p>회화 (Painting)</p>
+      <p>52 × 93 cm</p>
+      <p>디지털드로잉 (digital drawing)</p>
+      <p>2025</p>
+
+      <div class="description">
+        <p>
+          내 몸이 지워지듯 희망 사랑 떠나가듯 따뜻한 감정들이 이탈하고 채워지지 않은 채 기묘하게 더 왜곡되는 듯한 느낌이 담겼다.
+          미세하게 울렁이는 면의 결이 주는 불안감 속에 어떤 낯선 이미지가 출현하고,
+          가만히 기다려야 이해할 수 있는 장면이 시계를 거슬러 보일 수 있도록 조율이 더디 다가와 있다.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
