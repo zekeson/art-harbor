@@ -4,6 +4,14 @@
         <link rel="stylesheet" href="4_main.css">
     </head>
 <body>
+
+  <input type="checkbox" id="enterSite" hidden>
+  <div class="intro-screen">
+    <label for="enterSite" class="intro-overlay">
+      <h1 class="intro-title">ARTHARBOR</h1>
+    </label>
+  </div>
+
   <input type="radio" name="section" id="painting" checked>
   <input type="radio" name="section" id="sculpture">
   <input type="radio" name="section" id="mediaart">
@@ -137,5 +145,28 @@
         </div>
       </div>
 
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const intro = document.querySelector(".intro-screen");
+      
+          // 인트로가 처음만 보이도록 localStorage 체크
+          if (localStorage.getItem("introPlayed") === "true") {
+            intro.style.display = "none";
+          }
+      
+          intro.addEventListener("click", () => {
+            // 페이드아웃 처리
+            intro.classList.add("fade-out");
+      
+            // 완전히 사라진 후 display 제거
+            setTimeout(() => {
+              intro.style.display = "none";
+              localStorage.setItem("introPlayed", "true");
+            }, 1000); // CSS 애니메이션 시간과 맞춰줌
+          });
+        });
+      </script>
+      
+      
 </body>
 </html>
