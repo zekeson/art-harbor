@@ -61,29 +61,28 @@ input[type="radio"] {
     display: block;
   }
 
-.image-overlay {
+  .main-image-slider {
     position: relative;
-    display: inline-block;
+    width: 100%;
+    height: 650px; /* 적당히 조절 가능 */
+    overflow: hidden;
+    margin-top: 20px;
   }
-
-.image-overlay img {
-    display: block;
-    width: 1550px;
-    height: 750px;
-    object-fit: cover;
-  }
-
-.overlay-text {
+  
+  .slider-img {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 30px;
-    font-weight: 500;
-    text-align: center;
-    line-height: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
   }
+  
+  .slider-img.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
 
 .gallery-grid {
   display: grid;
@@ -155,7 +154,6 @@ input[type="radio"] {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
-
 
 
 .art-box img {
@@ -248,6 +246,7 @@ input[type="radio"] {
 #uni9:checked ~ .college-container .map-icon.uni9,
 #uni10:checked ~ .college-container .map-icon.uni10 {
   background-color: #000;
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 .college-info {
@@ -290,7 +289,6 @@ input[type="radio"] {
 }
 
 
-/**/
 /* 인트로 화면 스타일 */
 .intro-screen {
   position: fixed;
@@ -298,61 +296,31 @@ input[type="radio"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('intro-bg.jpg') center center/cover no-repeat;
   z-index: 9999;
-  transition: opacity 0.6s ease;
-}
-
-.intro-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6); /* 어두운 오버레이 */
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.intro-title {
-  font-size: 80px;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 8px;
-}
-
-/* 체크되면 인트로 화면 사라짐 */
-#enterSite:checked + .intro-screen {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* 체크되면 메인 콘텐츠 보이게 */
-#enterSite:checked ~ .main-content {
-  display: block;
-}
-
-/* 기본적으로 콘텐츠는 숨김 */
-.main-content {
-  display: none;
-}
-
-/**/
-.intro-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('your_background.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
   transition: opacity 1s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.intro-screen .intro-title {
+/* 어두운 오버레이 */
+.intro-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* 타이틀 텍스트 */
+.intro-title {
   color: white;
   font-size: 6rem;
   font-weight: bold;
@@ -361,7 +329,39 @@ input[type="radio"] {
   pointer-events: none;
 }
 
-.intro-screen.fade-out {
+/* 페이드아웃 효과 */
+.intro-screen.fade-out,
+.intro-overlay.fade-out {
   opacity: 0;
+  transition: opacity 1.2s ease;
   pointer-events: none;
+}
+
+
+/* 메인 콘텐츠는 기본적으로 보이게 설정 */
+.main-content {
+  display: block;
+  padding: 2rem;
+}
+
+/* 배경 전환용 백그라운드 레이어 */
+.intro-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* 검정 배경 레이어 - 맨 아래에 고정 */
+.intro-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  z-index: -2;
 }
