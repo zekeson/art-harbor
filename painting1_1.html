@@ -37,18 +37,17 @@
       z-index: 100;
     }
 
-    /* ✅ 라디오 메뉴 스타일 (메인과 동일) */
     .menu-container {
       display: flex;
       justify-content: center;
       gap: 40px;
       position: sticky;
       top: 0;
+      z-index: 999;
       background-color: white;
       margin: 20px 0;
       padding: 15px 0;
-      z-index: 99;
-    }
+}
 
     .menu-container input[type="radio"] {
       display: none;
@@ -71,23 +70,21 @@
 
     .detail-container {
       display: flex;
+      align-items: stretch;
       max-width: 1300px;
       margin: 0 auto;
       gap: 80px;
-      padding: 40px;
+      padding: 40px 40px 40px 80px; /* ← 여기가 핵심! 좌측 패딩을 키움 */
+      transform: translateX(10px);
+
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .detail-container {
-      display: flex;
-      max-width: 1300px;
-      margin: 0 auto;
-      gap: 80px;
-      padding: 40px 20px;
-    }
 
     .art-image {
       width: 490px;
-      height: 620px;
+      height: auto;
       flex-shrink: 0;
     }
 
@@ -99,24 +96,24 @@
     }
 
     .caption {
-      max-width: 500px;
+      max-width: 800px;
     }
 
     .caption h1 {
-      font-size: 36px;
+      font-size: 44px;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
 
     .caption p {
-      font-size: 20px;
-      margin: 8px 0;
+      font-size: 30px;
+      margin: 12px 0;
       font-weight: 400;
     }
 
     .description {
       margin-top: 40px;
-      font-size: 18px;
+      font-size: 22px;
       line-height: 1.6;
       color: #333;
     }
@@ -151,7 +148,7 @@
       max-width: 900px;
       margin: 80px auto;
       display: flex;
-      align-items: center;
+      align-items: flex-start;  /* ✅ 상단 정렬 */
       gap: 40px;
     }
 
@@ -161,17 +158,33 @@
       object-fit: cover;
     }
 
-    .artist-photo-section .artist-name {
+    .artist-name {
       font-size: 28px;
       font-weight: bold;
+      margin-bottom: 20px;
     }
+    
+    .artist-thumbnail-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .artist-thumbnail-row img {
+      width: 150px;
+      height: 231px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+
   </style>
 </head>
 <body>
 
   <!-- 로고 및 뒤로가기 버튼 -->
   <div class="top-logo">
-    <a href="4_main.html">
+    <a href="index.html">
       <img src="artharborlogo1.png" alt="ArtHarbor 로고">
     </a>
   </div>
@@ -237,7 +250,18 @@
   <!-- 작가 소개 -->
   <div class="artist-photo-section">
     <img src="testartist.png" alt="작가 증명사진">
-    <div class="artist-name">Ezekiel Son (손유륜)</div>
+
+    <div class="artist-info-block">
+      <div class="artist-name">Ezekiel Son (손유륜)</div>
+      <p> 2002.12.30 ~ </p>
+      
+      <div class="artist-thumbnail-row">
+        <img src="./artistmasterpieceimg/masterpieceimg1.JPG" alt="작품 썸네일1">
+        <img src="./artistmasterpieceimg/masterpieceimg2.JPG" alt="작품 썸네일2">
+        <img src="./artistmasterpieceimg/masterpieceimg3.JPG" alt="작품 썸네일3">
+        <img src="./artistmasterpieceimg/masterpieceimg4.JPG" alt="작품 썸네일4">
+      </div>
+    </div>
   </div>
 
   <!-- ✅ 라디오 탭 클릭 시 메인페이지 이동 -->
