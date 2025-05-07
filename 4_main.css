@@ -137,19 +137,19 @@ input[type="radio"] {
 }
 
 .art-caption span.title {
-  font-size: 36px;
+  font-size: 34px;
   display: block;
   margin-bottom: 8px;
 }
 
 .art-caption span.artist {
-  font-size: 28px;
+  font-size: 26px;
   display: block;
   margin-bottom: 4px;
 }
 
 .art-caption span.category {
-  font-size: 24px;
+  font-size: 22px;
   display: block;
 }
 
