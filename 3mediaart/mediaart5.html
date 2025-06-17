@@ -1,0 +1,287 @@
+<!-- 💡 변경된 부분은 주석으로 표시 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Floting Spring</title>
+  <link rel="stylesheet" href="4_main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Source Serif 4', serif;
+      margin: 0;
+    }
+
+    .top-logo {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+    .top-logo img {
+      width: 400px;
+      cursor: pointer;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      z-index: 100;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: white;
+      margin: 10px 0;
+      padding: 10px 0;
+    }
+
+    .menu-container input[type="radio"] {
+      display: none;
+    }
+
+    .menu-container label {
+      font-size: 16px;
+      font-weight: bold;
+      color: #aaa;
+      text-decoration: none;
+      padding-bottom: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .menu-container input[type="radio"]:checked + label {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+    .detail-container,
+    .video-section,
+    .artist-photo-section {
+      display: flex;
+      align-items: stretch;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 80px;
+      padding: 40px 40px 40px 80px;
+      transform: translateX(10px);
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .art-image, .video-block {
+      width: 490px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .art-image img,
+    .video-block video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption, .video-caption, .artist-info-block {
+      max-width: 800px;
+    }
+
+    .caption h1,
+    .video-caption h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .caption p,
+    .video-caption p {
+      font-size: 24px;
+      margin: 12px 0;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .description {
+      margin-top: 40px;
+      font-size: 22px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin: 80px auto;
+      width: 80%;
+    }
+
+.artist-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.artist-photo-section img:first-child {
+  width: 260px;
+  height: 460px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.artist-thumbnail-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  height: 320px; /* ✅ 메인 이미지와 동일하게 맞춤 */
+  align-items: flex-end;
+}
+
+.artist-thumbnail-row video {
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1 1 0;
+  display: block;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- 로고 및 뒤로가기 버튼 -->
+  <div class="top-logo">
+    <a href="../index.html">
+      <img src="../img/logo3.png" alt="ArtHarbor 로고">
+    </a>
+  </div>
+  <a href="javascript:history.back();" class="back-button">←</a>
+
+  <!-- 라디오 메뉴 -->
+  <div class="menu-container">
+    <input type="radio" id="tab1" name="tab">
+    <label for="tab1">Painting</label>
+
+    <input type="radio" id="tab2" name="tab">
+    <label for="tab2">Sculpture</label>
+
+    <input type="radio" id="tab3" name="tab" checked>
+    <label for="tab3">Media Art</label>
+
+    <input type="radio" id="tab4" name="tab">
+    <label for="tab4">College</label>
+  </div>
+
+  <!-- 작품 상세 -->
+  <div class="detail-container">
+    <div class="art-image">
+      <img src="../art/3mediaart/5/main5.jpg" alt="The Carolina Wren">
+    </div>
+    <div class="caption">
+      <h1>Floting Spring</h1>
+      <p>장유환</p>
+      <p>Media Art</p>
+      <p>Created with Touchdesigner</p>
+      <p>2025</p>
+      <div class="description">
+        <p>
+          <br>
+          봄의 풍경을 매개로, 자연 속에서 드러나는 유사성과 개별성의 미묘한 관계를 섬세하게 탐구한다.<br>
+          영상 속에서 수많은 파티클들이 모여 하나의 커다란 흐름을 만들어내는 모습은,<br>
+          마치 바람에 일렁이는 풀잎, 혹은 물결치는 꽃밭처럼 유기적이면서도 질서정연하다.<br><br>
+          그러나 그 안을 들여다보면, 각 파티클은 서로 다른 색감과 형태, 움직임을 지닌 채<br>
+          독립적인 존재로 살아 숨 쉬며, 자신만의 개성을 뚜렷이 발산한다.<br><br>
+          이처럼 하나로 어우러진 전체의 조화 속에서도, 각기 다른 존재들이 지닌 고유성은 분명하게 드러나며,<br>
+          자연이 가진 다채로운 스펙트럼과 그 안의 생명력을 시각적으로 체험하게 한다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 제작과정 섹션 -->
+  <div class="video-section">
+    <div class="video-block">
+      <video id="artVideo" controls>
+        <source src="../art/3mediaart/5/mainvideo5.mp4" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+      </video>
+    </div>
+    <div class="video-caption">
+      <h2>영상</h2>
+      <p>
+        <br>
+        이 작품은 관람자에게 자연의 이중적인 본질에 대한 사유를 제안한다.<br>
+        즉, 겉으로는 통일되고 조화롭게 보이는 전체 속에서도,<br>
+        각 개체들이 지닌 고유한 차이와 흔들림, 불완전함은 분명히 존재하며,<br>
+        이는 우리가 이해하고 받아들이는 세계의 복잡성과 다층적인 성격을 은유적으로 드러낸다.<br><br>
+        반복적으로 이어지는 형상들과 움직임은 마치 하나의 패턴처럼 느껴지지만,<br>
+        그 안에는 미세한 차이, 리듬의 편차, 색채의 변화가 스며들어 있어<br>
+        완전히 동일한 것은 단 하나도 없음을 상기시킨다.<br><br>
+        이러한 미묘한 차이들은 자연이 가진 고유한 이야기이자 시간의 흔적이며,<br>
+        우리가 익숙하다고 생각했던 장면들 속에서조차 새로운 의미를 끌어내게 만든다.<br><br>
+        작품은 보는 이로 하여금, 통일성과 개별성이 공존하는 세계를 감각적으로 경험하게 하며<br>
+        ‘차이 속의 조화’, 그리고 ‘조화 속의 차이’라는 자연의 역설적인 아름다움을 비로소 인식하게 한다.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 작가 소개 -->
+  <div class="artist-photo-section">
+    <img src="../art/3mediaart/5/artist.jpg" alt="작가 증명사진">
+    <div class="artist-info-block">
+      <div class="artist-name">장유환</div>
+      <p>2016 ~</p>
+      <p>
+        <a href="https://www.instagram.com/_yuhwan_jang?utm_source=ig_web_button_share_sheet&igsh=Mmhtd3pnODk0MTNt" target="_blank">
+          @_yuhwan_jang
+        </a>
+      </p>
+      <div class="artist-thumbnail-row">
+        <video src="../art/3mediaart/5/1.webm" controls muted></video>
+        <video src="../art/3mediaart/5/2.webm" controls muted></video>
+        <video src="../art/3mediaart/5/3.webm" controls muted></video>
+        <video src="../art/3mediaart/5/4.webm" controls muted></video>
+      </div>      
+    </div>
+    
+
+  <!-- 라디오 탭 클릭 시 메인페이지 이동 -->
+  <script>
+document.getElementById("tab1").addEventListener("click", () => {
+  window.location.href = "../index.html#painting";
+});
+document.getElementById("tab2").addEventListener("click", () => {
+  window.location.href = "../index.html#sculpture";
+});
+document.getElementById("tab3").addEventListener("click", () => {
+  window.location.href = "../index.html#mediaart";
+});
+document.getElementById("tab4").addEventListener("click", () => {
+  window.location.href = "../index.html#college";
+});
+
+  </script>
+
+</body>
+</html>

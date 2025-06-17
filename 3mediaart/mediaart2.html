@@ -1,0 +1,279 @@
+<!-- 💡 변경된 부분은 주석으로 표시 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Space X</title>
+  <link rel="stylesheet" href="4_main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Source Serif 4', serif;
+      margin: 0;
+    }
+
+    .top-logo {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+    .top-logo img {
+      width: 400px;
+      cursor: pointer;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      z-index: 100;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: white;
+      margin: 10px 0;
+      padding: 10px 0;
+    }
+
+    .menu-container input[type="radio"] {
+      display: none;
+    }
+
+    .menu-container label {
+      font-size: 16px;
+      font-weight: bold;
+      color: #aaa;
+      text-decoration: none;
+      padding-bottom: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .menu-container input[type="radio"]:checked + label {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+    .detail-container,
+    .video-section,
+    .artist-photo-section {
+      display: flex;
+      align-items: stretch;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 80px;
+      padding: 40px 40px 40px 80px;
+      transform: translateX(10px);
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .art-image, .video-block {
+      width: 490px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .art-image img,
+    .video-block video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption, .video-caption, .artist-info-block {
+      max-width: 800px;
+    }
+
+    .caption h1,
+    .video-caption h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .caption p,
+    .video-caption p {
+      font-size: 24px;
+      margin: 12px 0;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .description {
+      margin-top: 40px;
+      font-size: 22px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin: 80px auto;
+      width: 80%;
+    }
+
+.artist-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.artist-photo-section img:first-child {
+  width: 260px;
+  height: 460px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.artist-thumbnail-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  height: 320px; /* ✅ 메인 이미지와 동일하게 맞춤 */
+  align-items: flex-end;
+}
+
+.artist-thumbnail-row video {
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1 1 0;
+  display: block;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- 로고 및 뒤로가기 버튼 -->
+  <div class="top-logo">
+    <a href="../index.html">
+      <img src="../img/logo3.png" alt="ArtHarbor 로고">
+    </a>
+  </div>
+  <a href="javascript:history.back();" class="back-button">←</a>
+
+  <!-- 라디오 메뉴 -->
+  <div class="menu-container">
+    <input type="radio" id="tab1" name="tab">
+    <label for="tab1">Painting</label>
+
+    <input type="radio" id="tab2" name="tab">
+    <label for="tab2">Sculpture</label>
+
+    <input type="radio" id="tab3" name="tab" checked>
+    <label for="tab3">Media Art</label>
+
+    <input type="radio" id="tab4" name="tab">
+    <label for="tab4">College</label>
+  </div>
+
+  <!-- 작품 상세 -->
+  <div class="detail-container">
+    <div class="art-image">
+      <img src="../art/3mediaart/2/main2.jpg" alt="The Carolina Wren">
+    </div>
+    <div class="caption">
+      <h1>Space X</h1>
+      <p>Ngr.ev</p>
+      <p>Media Art</p>
+      <p>Created with Touchdesigner</p>
+      <p>2025</p>
+      <div class="description">
+        <p>
+          로켓이 폭발하거나 대기권에서 분해되는 순간, 수백 개의 부품과 파편이 중력과 속도의 법칙에 따라 궤적을 그린다.<br><br>
+          이 장면은 SpaceX 로켓의 해체 또는 폭발을 시뮬레이션한 데이터 시각화로,<br>
+          각각의 숫자는 개별 파편이나 구성요소의 식별 코드이다.<br><br>
+          어두운 하늘 위로 흩어지는 빛줄기와 수치들은 현대 우주기술의 정밀성과 동시에 그 취약성을 드러낸다.<br><br>
+          아름다움과 위기의 교차점에서, 우리는 기술적 진보의 그림자도 마주하게 된다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 제작과정 섹션 -->
+  <div class="video-section">
+    <div class="video-block">
+      <video id="artVideo" controls>
+        <source src="../art/3mediaart/2/mainvideo2.webm" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+      </video>
+    </div>
+    <div class="video-caption">
+      <h2>영상</h2>
+      <p>
+        <br>
+        "Fragmented Trajectory"는 로켓이 공중에서 해체될 때 발생하는 수백 개의 파편이 중력과 속도, 공기저항이라는 <br>
+        물리 법칙 아래 펼치는 궤적을 시각적으로 기록한 미디어 아트이다.<br><br>
+        실제 SpaceX의 로켓 폭발 장면을 바탕으로 제작된 이 영상은, 데이터에 기반한 시뮬레이션을 통해 ‘파괴의 질서’를 보여준다.<br><br>
+        각 파편에는 식별 번호가 부여되어 있으며, 단순한 잔해가 아닌 하나의 좌표화된 정보 객체로 기능한다.<br><br>
+        영상은 불규칙하지만 일정한 흐름 속에서 흩어지는 수많은 빛줄기를 통해, 기술의 진보가 지닌 물리적 한계와 미학적 가능성을 동시에 암시한다.<br><br>
+        시청자는 단지 폭발의 잔해가 아니라, 질서 정연한 정보의 흐름과 시간의 물리적 해체 과정을 마주하게 된다.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 작가 소개 -->
+  <div class="artist-photo-section">
+    <img src="../art/3mediaart/2/artist.jpg" alt="작가 증명사진">
+    <div class="artist-info-block">
+      <div class="artist-name">Ngr.ev</div>
+      <p>2022 ~</p>
+      <p>
+        <a href="https://www.instagram.com/ngr.ev?utm_source=ig_web_button_share_sheet&igsh=NW41MXNsMDgyaWd3" target="_blank">
+          @ngr.ev
+        </a>
+      </p>
+      <div class="artist-thumbnail-row">
+        <video src="../art/3mediaart/2/1.webm" controls muted></video>
+        <video src="../art/3mediaart/2/2.webm" controls muted></video>
+        <video src="../art/3mediaart/2/3.webm" controls muted></video>
+        <video src="../art/3mediaart/2/4.webm" controls muted></video>
+      </div>      
+    </div>
+    
+
+  <!-- 라디오 탭 클릭 시 메인페이지 이동 -->
+  <script>
+document.getElementById("tab1").addEventListener("click", () => {
+  window.location.href = "../index.html#painting";
+});
+document.getElementById("tab2").addEventListener("click", () => {
+  window.location.href = "../index.html#sculpture";
+});
+document.getElementById("tab3").addEventListener("click", () => {
+  window.location.href = "../index.html#mediaart";
+});
+document.getElementById("tab4").addEventListener("click", () => {
+  window.location.href = "../index.html#college";
+});
+
+  </script>
+
+</body>
+</html>

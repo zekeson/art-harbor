@@ -1,0 +1,278 @@
+<!-- 💡 변경된 부분은 주석으로 표시 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Carolina Wren</title>
+  <link rel="stylesheet" href="4_main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Source Serif 4', serif;
+      margin: 0;
+    }
+
+    .top-logo {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+    .top-logo img {
+      width: 400px;
+      cursor: pointer;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      z-index: 100;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: white;
+      margin: 10px 0;
+      padding: 10px 0;
+    }
+
+    .menu-container input[type="radio"] {
+      display: none;
+    }
+
+    .menu-container label {
+      font-size: 16px;
+      font-weight: bold;
+      color: #aaa;
+      text-decoration: none;
+      padding-bottom: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .menu-container input[type="radio"]:checked + label {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+    .detail-container,
+    .video-section,
+    .artist-photo-section {
+      display: flex;
+      align-items: stretch;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 80px;
+      padding: 40px 40px 40px 80px;
+      transform: translateX(10px);
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .art-image, .video-block {
+      width: 490px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .art-image img,
+    .video-block video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption, .video-caption, .artist-info-block {
+      max-width: 800px;
+    }
+
+    .caption h1,
+    .video-caption h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .caption p,
+    .video-caption p {
+      font-size: 24px;
+      margin: 12px 0;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .description {
+      margin-top: 40px;
+      font-size: 22px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin: 80px auto;
+      width: 80%;
+    }
+
+.artist-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.artist-photo-section img:first-child {
+  width: 260px;
+  height: 460px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.artist-thumbnail-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  height: 320px; /* ✅ 메인 이미지와 동일하게 맞춤 */
+  align-items: flex-end;
+}
+
+.artist-thumbnail-row video {
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1 1 0;
+  display: block;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- 로고 및 뒤로가기 버튼 -->
+  <div class="top-logo">
+    <a href="../index.html">
+      <img src="../img/logo3.png" alt="ArtHarbor 로고">
+    </a>
+  </div>
+  <a href="javascript:history.back();" class="back-button">←</a>
+
+  <!-- 라디오 메뉴 -->
+  <div class="menu-container">
+    <input type="radio" id="tab1" name="tab">
+    <label for="tab1">Painting</label>
+
+    <input type="radio" id="tab2" name="tab">
+    <label for="tab2">Sculpture</label>
+
+    <input type="radio" id="tab3" name="tab" checked>
+    <label for="tab3">Media Art</label>
+
+    <input type="radio" id="tab4" name="tab">
+    <label for="tab4">College</label>
+  </div>
+
+  <!-- 작품 상세 -->
+  <div class="detail-container">
+    <div class="art-image">
+      <img src="../art/3mediaart/1/main1.jpg" alt="The Carolina Wren">
+    </div>
+    <div class="caption">
+      <h1>The Carolina Wren</h1>
+      <p>Lucio Arese</p>
+      <p>Media Art</p>
+      <p>1280 x 718 </p>
+      <p>Created with Touchdesigner</p>
+      <p>2025</p>
+      <div class="description">
+        <p>
+          <br><br>
+          The song has a very defined and compact pattern <br><br>
+          so I imagined it as a closed, <br><br>
+          cyclic visual loop and tried to organize the visual system like that.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 제작과정 섹션 -->
+  <div class="video-section">
+    <div class="video-block">
+      <video id="artVideo" controls>
+        <source src="../art/3mediaart/1/mainvideo.webm" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+      </video>
+    </div>
+    <div class="video-caption">
+      <h2>영상</h2>
+      <p>
+        <br><br>
+        미국 남동부에서 흔히 서식하는 작은 새인 캐롤라이나굴뚝새(Carolina Wren)의 일상을 포착한다.<br><br>
+        따뜻한 색감과 선명한 촬영 구도는 관찰자의 시선을 새의 움직임에 자연스럽게 이끈다.<br><br>
+        짧은 영상임에도 불구하고 소리와 시각 정보가 조화롭게 구성되어 있어,<br><br>
+        새가 지닌 생태적 특성과 자연 속 조화를 인상적으로 전달한다.<br><br>
+        특히 오디오가 포함되어 있어 실제 울음소리나 주변 자연 환경음이 영상의 몰입도를 더욱 높인다.<br><br>
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 작가 소개 -->
+  <div class="artist-photo-section">
+    <img src="../art/3mediaart/1/artist.jpg" alt="작가 증명사진">
+    <div class="artist-info-block">
+      <div class="artist-name">Lucio Arese</div>
+      <p>2016 ~</p>
+      <p>
+        <a href="https://www.instagram.com/lucioarese?utm_source=ig_web_button_share_sheet&igsh=MWdpaXltdG0ybHkzMQ==" target="_blank">
+          @lucio_arese
+        </a>
+      </p>
+      <div class="artist-thumbnail-row">
+        <video src="../art/3mediaart/1/1.webm" controls muted></video>
+        <video src="../art/3mediaart/1/2.webm" controls muted></video>
+        <video src="../art/3mediaart/1/3.webm" controls muted></video>
+        <video src="../art/3mediaart/1/4.webm" controls muted></video>
+      </div>      
+    </div>
+    
+
+  <!-- 라디오 탭 클릭 시 메인페이지 이동 -->
+  <script>
+document.getElementById("tab1").addEventListener("click", () => {
+  window.location.href = "../index.html#painting";
+});
+document.getElementById("tab2").addEventListener("click", () => {
+  window.location.href = "../index.html#sculpture";
+});
+document.getElementById("tab3").addEventListener("click", () => {
+  window.location.href = "../index.html#mediaart";
+});
+document.getElementById("tab4").addEventListener("click", () => {
+  window.location.href = "../index.html#college";
+});
+
+  </script>
+
+</body>
+</html>

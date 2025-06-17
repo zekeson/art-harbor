@@ -1,0 +1,284 @@
+<!-- 💡 변경된 부분은 주석으로 표시 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Exploration on terrains</title>
+  <link rel="stylesheet" href="4_main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Source Serif 4', serif;
+      margin: 0;
+    }
+
+    .top-logo {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+    .top-logo img {
+      width: 400px;
+      cursor: pointer;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      font-size: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      z-index: 100;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: white;
+      margin: 10px 0;
+      padding: 10px 0;
+    }
+
+    .menu-container input[type="radio"] {
+      display: none;
+    }
+
+    .menu-container label {
+      font-size: 16px;
+      font-weight: bold;
+      color: #aaa;
+      text-decoration: none;
+      padding-bottom: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .menu-container input[type="radio"]:checked + label {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+    .detail-container,
+    .video-section,
+    .artist-photo-section {
+      display: flex;
+      align-items: stretch;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 80px;
+      padding: 40px 40px 40px 80px;
+      transform: translateX(10px);
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .art-image, .video-block {
+      width: 490px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .art-image img,
+    .video-block video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption, .video-caption, .artist-info-block {
+      max-width: 800px;
+    }
+
+    .caption h1,
+    .video-caption h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .caption p,
+    .video-caption p {
+      font-size: 24px;
+      margin: 12px 0;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .description {
+      margin-top: 40px;
+      font-size: 22px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin: 80px auto;
+      width: 80%;
+    }
+
+.artist-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.artist-photo-section img:first-child {
+  width: 260px;
+  height: 460px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.artist-thumbnail-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  height: 320px; /* ✅ 메인 이미지와 동일하게 맞춤 */
+  align-items: flex-end;
+}
+
+.artist-thumbnail-row video {
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1 1 0;
+  display: block;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- 로고 및 뒤로가기 버튼 -->
+  <div class="top-logo">
+    <a href="../index.html">
+      <img src="../img/logo3.png" alt="ArtHarbor 로고">
+    </a>
+  </div>
+  <a href="javascript:history.back();" class="back-button">←</a>
+
+  <!-- 라디오 메뉴 -->
+  <div class="menu-container">
+    <input type="radio" id="tab1" name="tab">
+    <label for="tab1">Painting</label>
+
+    <input type="radio" id="tab2" name="tab">
+    <label for="tab2">Sculpture</label>
+
+    <input type="radio" id="tab3" name="tab" checked>
+    <label for="tab3">Media Art</label>
+
+    <input type="radio" id="tab4" name="tab">
+    <label for="tab4">College</label>
+  </div>
+
+  <!-- 작품 상세 -->
+  <div class="detail-container">
+    <div class="art-image">
+      <img src="../art/3mediaart/4/main4.jpg" alt="Exploration on terrains">
+    </div>
+    <div class="caption">
+      <h1>Exploration on terrains</h1>
+      <p>Miroko</p>
+      <p>Media Art</p>
+      <p>sideFX Houdini</p>
+      <p>2025</p>
+      <div class="description">
+        <p>
+          <br>
+          이 작품은 소말리아 지역의 실측 고도 데이터를 바탕으로 생성된 지형 실험이다.<br>
+          작가는 디지털 솔버 내부에서 지형 스스로의 정보에 의해 왜곡되는 절차적 과정을 구현함으로써,<br>
+          알고리즘이 기억하고 해석한 풍경을 시각화한다.<br>
+          변형된 텍스처와 진화하는 지형 표면은 자연의 흔적과 알고리즘의 간섭이 맞물려 형성된<br>
+          '기억된 지형' 혹은 '왜곡된 현실'을 제시하며,<br>
+          인간이 인식할 수 있는 경계 너머의 풍경을 상상하게 만든다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 제작과정 섹션 -->
+  <div class="video-section">
+    <div class="video-block">
+      <video id="artVideo" controls>
+        <source src="../art/3mediaart/4/mainvideo4.webm" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+      </video>
+    </div>
+    <div class="video-caption">
+      <h2>영상</h2>
+      <p>
+        <br>
+        이 미디어 아트 영상은 실제 소말리아 지역의 고도 데이터를 바탕으로 생성된 디지털 지형이,<br>
+        절차적 알고리즘을 통해 지속적으로 왜곡되고 재구성되는 과정을 시각적으로 기록한 것이다.<br>
+        작가는 고도 정보가 담긴 하이트필드를 기반으로,<br>
+        해당 데이터 자체가 움직임(Advection)을 유도하는 방식으로 솔버 내부에서 연산을 진행시킨다.
+        이로 인해 단순한 자연 지형은 점차 이질적이고 기하학적인 형태로 변모하며, 원래의 지형성과 전혀 다른 풍경으로 진화한다.<br><br>
+
+        영상은 정지된 이미지가 아닌, 지형의 기억이 시간에 따라 어떻게 재구성되는가를 보여주는 시간 기반 실험이다.<br>
+        검은색과 회색조의 화면 속에서 섬세한 움직임이 반복되고, 고요한 듯 미세하게 진동하는 표면은 마치 지구의 내면이 꿈틀거리는 것처럼 보인다.<br>
+        이는 자연의 데이터가 디지털 알고리즘이라는 해석기를 통과할 때, 얼마나 낯선 ‘풍경의 언어’로 탈바꿈하는지를 탐구하는 작업이다.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 작가 소개 -->
+  <div class="artist-photo-section">
+    <img src="../art/3mediaart/4/artist.jpg" alt="작가 증명사진">
+    <div class="artist-info-block">
+      <div class="artist-name">Miroko</div>
+      <p>2018 ~</p>
+      <p>
+        <a href="https://www.instagram.com/mirko.pelliccia?utm_source=ig_web_button_share_sheet&igsh=MXJ4dHdpajdqbXU5Mg==" target="_blank">
+          @mirko.pelliccia
+        </a>
+      </p>
+      <div class="artist-thumbnail-row">
+        <video src="../art/3mediaart/4/1.webm" controls muted></video>
+        <video src="../art/3mediaart/4/2.webm" controls muted></video>
+        <video src="../art/3mediaart/4/3.mp4" controls muted></video>
+        <video src="../art/3mediaart/4/4.mp4" controls muted></video>
+      </div>      
+    </div>
+    
+
+  <!-- 라디오 탭 클릭 시 메인페이지 이동 -->
+  <script>
+document.getElementById("tab1").addEventListener("click", () => {
+  window.location.href = "../index.html#painting";
+});
+document.getElementById("tab2").addEventListener("click", () => {
+  window.location.href = "../index.html#sculpture";
+});
+document.getElementById("tab3").addEventListener("click", () => {
+  window.location.href = "../index.html#mediaart";
+});
+document.getElementById("tab4").addEventListener("click", () => {
+  window.location.href = "../index.html#college";
+});
+
+  </script>
+
+</body>
+</html>
